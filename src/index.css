@@ -1,68 +1,292 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+#root, body{
+  width: 100svw;
+  height: 100vh;
+  padding: 0;
   margin: 0;
+}
+
+.login-page{
+    background-image: url('/public/login_bg.png');
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-page__overlay{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.login-page__title{
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  color: white;
+  gap: 0px;
+  position: relative;
+  z-index: 5;
+  width: fit-content;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.login-page__title span{
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  margin: 0px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.login-page__title h1{
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 70px;
+  line-height: 70px;
+  font-style: normal;
+  margin: 0px;
+  transform: translateY(-5px);
+}
+
+.login-page__form{
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 80vw;
+  max-width: 500px;
+  height: fit-content;
+  min-height: 40svh;
+  max-height: 600px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.form-title{
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  color: #3E3E3E;
+  margin: 0px;
+}
+
+.form-input{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-input label{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #3E3E3E;
+}
+
+.form-input input{
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.form-button{
+  align-self: end;
+  background-color: #0B5ED7;
+}
+
+.p-icon-field.p-icon-field-right{
+  width: 100%;
+}
+
+button{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.administration-page{
+  background-color: #E7E7E7;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50px auto;
+  height: 100%;
+  width: 100%;
+}
+
+.administration-page__navbar{
+  background-color: #2B2D33;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px
+}
+
+.administration-page__navbar span{
+  font-size: 10px;
+}
+
+.administration-page__navbar h1{
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.administration-page__navbar i{
+  color: white;
+  font-weight: 600;
+}
+
+.administration-page__content{
+  padding: 20px;
+}
+
+.administration-page__content-space{
+  background-color: white;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0px auto;
+}
+
+.page{
+  height: 100%;
+  width: 100%;
+}
+
+.page__title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px;
+  gap: 10px;
+  position: relative;
+}
+
+.page__title i{
+  position: absolute;
+  top: 15px;
+  left: 5%;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.page__title h4{
+  margin: 0px;
+  color: #3E3E3E;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.page__title hr{
+  margin: 0px;
+  width: 90%;
+  color: #DADADA;
+  background-color: #DADADA;
+}
+
+.task-list{
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 0px 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.task{
+  height: fit-content;
+  min-height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.task-icons{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  color: white;
+}
+
+.task-icons i, span{
+  font-size: 12px;
+}
+
+.task-description-task p{
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.task-description p{
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.task--Hard{
+  background-color: #D34848;
+}
+
+.task--Easy{
+  background-color: #478846;
+}
+
+.task--Medium{
+  background-color: #DB8536;
+}
+
+.task-description{
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 0px 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.task-description .task-icons{
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.task-description > span,
+.task-description > p{
+  font-family: 'Poppins', sans-serif;
+  color: black;
+}
+
+.task-description > span{
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.task-description > p{
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.administration-page__navbar i{
+  cursor: pointer;
 }
